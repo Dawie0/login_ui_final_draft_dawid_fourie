@@ -1,6 +1,41 @@
+* {
+    box-sizing: border-box;
+  }
+  
+html,
 body {
-    font-family: 'Roboto Mono', monospace;
+  height: 100%;
 }
+@keyframes rotate {
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+body {
+    background-color: #000;
+    background-image: url("bbblurry (1).svg");
+    background-repeat: no-repeat;
+    background-size: 200vh;
+    font-family: 'Roboto Mono', monospace;
+    color: #000;
+    font-weight: bold;
+}
+
+a:link {
+    color: #58f901;
+}
+
+a:visited {
+    color: #58f901;
+  }
+  
+  a:hover {
+    color: #58f901;
+  }
+  
+  a:active {
+    color: #58f901;
+  }
 
 .container {
     display: flex;
@@ -11,12 +46,6 @@ body {
     position: relative;
 }
 
-#bg-img {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-}
 
 .login-box,.error-div {
     display: flex;
@@ -26,7 +55,7 @@ body {
     align-self: center;
     align-items: center;
     justify-content: center;
-    background-color: rgba(95, 158, 160, 0.8);
+    background-color: rgba(95, 158, 160, 0);
     border-radius: 20%;
     box-shadow: 0px 3px 3px 0px rgb(0, 0, 0, 0.75);
     border-style: solid;
@@ -60,6 +89,7 @@ body {
     border: none;
     border-bottom: 1px solid #000000;
     color: #000000;
+    transition: 0.4s;
 } 
 
 .remember {
@@ -76,7 +106,7 @@ body {
     margin-right: 5px;
 }
 
-#login-button,#back-btn {
+#login-button,#back-button,#signup-button {
     min-width: 60px;
     width: 80px;
     margin: 3px;
@@ -84,11 +114,57 @@ body {
     padding-left: 0.9em;
     padding-right: 0.9em;
     border-radius: 1em;
+    cursor: pointer;
 }
 
 
 @media (any-hover:hover) {
-    #login-button:hover,#back-btn:hover{
+    #login-button:hover,#back-btn:hover,#signup-button:hover{
         background-color: lightsteelblue;
     }
 }
+
+.indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+#bars {
+    margin: 8px 0;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  #bars div {
+    height: 6px;
+    border-radius: 3px;
+    transition: 0.4s;
+    width: 0%;
+  }
+  
+  #bars.weak div {
+    background: #bc2b38;
+    width: 33.33%;
+  }
+  
+  #bars.medium div {
+    background: #d36f30;
+    width: 66.66%;
+  }
+  
+  #bars.strong div {
+    background: #1eb965;
+    width: 100%;
+  }
+  
+  .strength {
+    text-align: left;
+    height: 30px;
+    text-transform: capitalize;
+  }
