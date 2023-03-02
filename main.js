@@ -1,6 +1,6 @@
 const bars = document.querySelector("#bars"),
   strengthDiv = document.querySelector("#strength"),
-  passwordInput = document.querySelector("#password");
+  passwordInput = document.querySelector("#password-signup");
 
 const strength = {
   1: "weak",
@@ -57,3 +57,26 @@ const handleChange = () => {
     strengthDiv.innerText = "";
   }
 };
+
+
+let userName = document.querySelector("#username-signup");
+let userPassword = document.querySelector("#password-signup");
+let logThatConsoleBaby = () => {
+  console.log(userName.value);
+  console.log(userPassword.value);
+  document.location='index.html'
+}
+console.log(userName);
+console.log(userPassword);
+
+let checkUsername = () => {
+  let cUsername = document.querySelector("#username");
+  if (cUsername === userName) {
+    console.log("username Match");
+  }
+  else {
+    console.log("No match");
+    console.log("username = ", userName.value);
+    console.log("typed username = ", cUsername.value);
+  }
+}

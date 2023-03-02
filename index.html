@@ -14,20 +14,30 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <img src="user.png" alt="user profile" id="user-img">
             <h2>Login</h2>
-            <input type="text" id="username" placeholder="Username" required="required">
-            <input type="password" id="password" placeholder="Password" required="required">
+            <div class="form-control">
+                <input type="text" id="username" required="required">
+                <label>
+                    <span style="transition-delay:0ms">U</span><span style="transition-delay:50ms">s</span><span style="transition-delay:100ms">e</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+                </label>
+            </div>
+            <div class="form-control">
+                <input type="password" id="password" required="required">
+                <label>
+                    <span style="transition-delay:0ms">P</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">s</span><span style="transition-delay:200ms">w</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">r</span><span style="transition-delay:350ms">d</span>
+                </label>
+            </div>
             <div class="remember">
                 <input type="checkbox" class="remember" id="check">
                 <p class="remember">Remember Meh?</p>
             </div>
-            <button type="submit" name="login" id="login-button" onclick="document.location='error.html'">Login</button>
-            <p>Forgot <a href="error.html">Password?</a></p>
-            <p><a href="signup.html">Not signed up yet?</a></p>
-            
+            <button type="submit" name="login" id="login-button" class="abc" onclick="checkUsername()">Login</button>
+            <p class="a">Forgot <a href="error.html">Password?</a></p>
+            <p class="a">Dont have an account?</p>
+            <a href="signup.html" class="a"><b>Sign up!</b></a>
         </div>
     </div>
+    
     
     
 </body>
