@@ -1,22 +1,8 @@
-* {
-    box-sizing: border-box;
-  }
-  
-html,
-body {
-  height: 100%;
-  
-}
-@keyframes rotate {
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+/* general body css */
 body {
     background-color: #000;
-    background-image: url("bbblurry (1).svg");
+    background-image: url("bbblurry2.svg");
     background-repeat: no-repeat;
-    background-size: 200vh;
     font-family: 'Roboto Mono', monospace;
     color: #000;
     font-weight: bold;
@@ -24,29 +10,10 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    position: relative;
 }
 
-.a {
-  margin: 2px;
-}
-
-a:link {
-    color: #58f901;
-    margin-bottom: 3px;
-}
-
-a:visited {
-    color: #58f901;
-  }
-  
-  a:hover {
-    color: #58f901;
-  }
-  
-  a:active {
-    color: #58f901;
-  }
-
+/* container css setting up flexbox */
 .container {
     display: flex;
     align-items: center;
@@ -56,20 +23,11 @@ a:visited {
     position: relative;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */ 
-  font-weight: bolder;
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #58f901;
-  font-weight: bolder;
-}
-
-
+/* reusable css for multiple webpages */
 .login-box,.error-div,.login-card {
     display: flex;
     min-height: 420px;
-    min-width: 300px;
+    min-width: 280px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -84,22 +42,32 @@ a:visited {
     z-index: 1;
 }
 
+/* placeholder text in different web browser */
+::placeholder {
+  font-weight: bolder;
+}
+:-ms-input-placeholder {  
+  font-weight: bolder;
+}
+
+/* adjusting links margins and color */
+.a {
+  margin: 2px;
+}
+a:link,a:visited,a:hover,a:active {
+    color: #58f901;
+    margin-bottom: 3px;
+}
+
+/* adjusting error divs for error page  */
 .error-div {
     padding: 10px;
 }
-
 .error-paragraph {
     font-weight: bolder;
 }
 
-#user-img {
-    min-width: 100px;
-    width: 120px;
-    margin: 0.3em;
-    padding: 0.5em;
-    
-}
-
+/* general input css */
 #username,#password,#username-signup,#password-signup {
     min-width: 120px;
     margin: 3px;
@@ -111,6 +79,7 @@ a:visited {
     transition: 0.4s;
 } 
 
+/* remember me section css (p tag and checkmark) */
 .remember {
     display: flex;
     justify-content: center;
@@ -118,37 +87,26 @@ a:visited {
     margin: 2px;
     font-weight: bolder;
 }
-
 #check {
     width: 17px;
     height: 17px;
     margin-right: 5px;
+    cursor: pointer;
 }
 
+/* general button css */
 #login-button,#back-button,#signup-button {
     min-width: 60px;
-    width: 80px;
+    width: 100px;
     margin: 3px;
     padding: 0.5em;
     padding-left: 0.9em;
     padding-right: 0.9em;
-    border-radius: 1em;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-
-@media (any-hover:hover) {
-    #login-button:hover,#back-btn:hover,#signup-button:hover{
-        background-color: lightsteelblue;
-    }
-}
-
-.indicator {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
+/* progress bar and strength text css - followed a tutorial from Frontend Joe */
 #bars {
     margin: 8px 0;
     flex: 1 1 auto;
@@ -159,38 +117,32 @@ a:visited {
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.1);
   }
-  
   #bars div {
     height: 6px;
     border-radius: 3px;
     transition: 0.4s;
     width: 0%;
-  }
-  
+  } 
   #bars.weak div {
     background: #bc2b38;
     width: 33.33%;
   }
-  
   #bars.medium div {
     background: #d36f30;
     width: 66.66%;
   }
-  
   #bars.strong div {
     background: #1eb965;
     width: 100%;
   }
-  
   .strength {
     text-align: left;
     height: 30px;
     text-transform: capitalize;
   }
 
-
-  /* ----------------- */
-.abc {
+  /* Button animation - followed along with a tutorial, I did change how the button looks (don't remember which one) */
+.btn {
   padding: 0.8em 1.8em;
   border: 2px solid #58f901;
   position: relative;
@@ -204,9 +156,8 @@ a:visited {
   font-family: inherit;
   color: #58f901;
   font-weight: bolder;
-}
-   
-.abc::before {
+} 
+.btn::before {
   content: '';
   width: 0;
   height: 300%;
@@ -219,59 +170,44 @@ a:visited {
   display: block;
   z-index: -1;
 }
-   
-.abc:hover::before {
+.btn:hover::before {
   width: 105%;
-}
-   
-.abc:hover {
+}  
+.btn:hover {
   color: #111;
   font-weight: bolder;
 }
 
- /* ----------------- */
-
+ /* input animation - followed along with a tutorial, I did change a bunch of things (don't remember which one, same guy from above button code) */
  .form-control {
   position: relative;
-  margin: 5px 0 5px;
+  margin: 12px 0 12px;
   width: 190px;
 }
-
 .form-control input {
-  background-color: transparent;
-  border: 0;
-  border-bottom: 2px #fff solid;
-  display: block;
-  width: 100%;
-  padding: 15px 0;
-  font-size: 18px;
-  color: #fff;
+  font-size: 16px;
 }
-
 .form-control input:focus,
 .form-control input:valid {
   outline: 0;
-  border-bottom-color: lightblue;
 }
-
 .form-control label {
   position: absolute;
   top: 15px;
   left: 0;
   pointer-events: none;
 }
-
 .form-control label span {
   display: inline-block;
   font-size: 12px;
+  font-weight: bolder;
   min-width: 5px;
-  color: #fff;
+  color: black;
   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
 .form-control input:focus+label span,
 .form-control input:valid+label span {
-  color: lightblue;
+  color: #58f901;
   transform: translateY(-30px);
 }
 

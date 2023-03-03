@@ -1,13 +1,16 @@
+/* Using DOM to set variables to reference the strength progress bar, strength text as well as the password input field*/
 const bars = document.querySelector("#bars"),
   strengthDiv = document.querySelector("#strength"),
   passwordInput = document.querySelector("#password-signup");
 
+/* Setting an object to reference index later */
 const strength = {
   1: "weak",
   2: "medium",
   3: "strong",
 };
 
+/* Function to get strength indication (number between 0-3) and reference strength object above (0 means none) */
 const getIndicator = (password, strengthValue) => {
   for (let index = 0; index < password.length; index++) {
     let char = password.charCodeAt(index);
@@ -31,6 +34,7 @@ const getIndicator = (password, strengthValue) => {
   return strength[strengthIndicator] ?? "";
 };
 
+/* function setting default values to false and calling above function to update values as they change */
 const getStrength = (password) => {
   let strengthValue = {
     upper: false,
@@ -41,10 +45,10 @@ const getStrength = (password) => {
   return getIndicator(password, strengthValue);
 };
 
+/* Function to handle real time change when something is added to password input, adds text to a div saying the password is strong, medium or weak,
+ adjusts the class of the bars div to update the progress bar */
 const handleChange = () => {
   let { value: password } = passwordInput;
-
-  console.log(password);
 
   const strengthText = getStrength(password);
 
@@ -58,25 +62,7 @@ const handleChange = () => {
   }
 };
 
-
-let userName = document.querySelector("#username-signup");
-let userPassword = document.querySelector("#password-signup");
-let logThatConsoleBaby = () => {
-  console.log(userName.value);
-  console.log(userPassword.value);
-  document.location='index.html'
-}
-console.log(userName);
-console.log(userPassword);
-
-let checkUsername = () => {
-  let cUsername = document.querySelector("#username");
-  if (cUsername === userName) {
-    console.log("username Match");
-  }
-  else {
-    console.log("No match");
-    console.log("username = ", userName.value);
-    console.log("typed username = ", cUsername.value);
-  }
+/*  */
+const changePage = (page) => {
+  document.location = `${page}.html`
 }
